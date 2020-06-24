@@ -10,9 +10,8 @@ namespace Homework3
             List<string> tasksName = new List<string>();
             List<string> timeName = new List<string>();
             string question;
-           
-            do
-            {
+
+            for (int i=0; ;i++) {
                 Console.WriteLine("\nInsert task: ");
                 string task = Console.ReadLine();
                 tasksName.Add(task);
@@ -22,9 +21,11 @@ namespace Homework3
                 Console.WriteLine("\nWant to enter another task?(Press eny key or n)");
                 string q = Console.ReadLine();
                 question = q.ToUpper();
+                if (question=="N") {
+                    break;
+                }
             }
-            while (question != "N");
-
+            
             for (var i = 0; i < tasksName.Count && i < timeName.Count; i++)
             {
                 string a = tasksName[i];
