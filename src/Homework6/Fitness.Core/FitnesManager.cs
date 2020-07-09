@@ -107,7 +107,7 @@ namespace Fitness.Core
                 Console.WriteLine($"Show calories: ");
                 double Calories=0;
                 foreach (var item in person.CaloriesPerDay) {
-                    Console.WriteLine($"Date:{item.Time.ToShortDateString()} Calories:{item.CaloriesOnTime}");
+                    Console.WriteLine($"Date:{item.Time} Calories:{item.CaloriesOnTime}");
                     Calories += item.CaloriesOnTime;
                 }
                 Console.WriteLine($"Total calories: {Calories}");

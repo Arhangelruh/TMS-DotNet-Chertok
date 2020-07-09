@@ -11,7 +11,7 @@ namespace Fitness.Core.Models
         public Calories(double caloriesOnTime)
         {
             CaloriesOnTime = caloriesOnTime;
-            Time = DateTime.Now.Date;
+            Time = DateTime.Now;
         }
     }
 }
