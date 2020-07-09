@@ -1,4 +1,5 @@
-﻿using Homework5.Logic;
+﻿
+using Homework5.Logic;
 using System;
 
 namespace Homework5
