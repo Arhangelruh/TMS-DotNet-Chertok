@@ -9,7 +9,8 @@ namespace Homework7
         static void Main(string[] args)
         {
 
-            for (int i=1; i<=5; i++ ) {
+            for (int i = 1; i <= 5; i++)
+            {
                 Thread thread = new Thread(WorkCash);
                 thread.Start(i);
             }
@@ -21,7 +22,7 @@ namespace Homework7
             DateTime timework = DateTime.Now;
             Random random = new Random();
             int timeopen = 10;
-            int timeclose = 15;
+            int timeclose = 23;
 
             if (timework.Minute > timeopen && timework.Minute < timeclose)
             {
@@ -37,7 +38,8 @@ namespace Homework7
                 };
                 Console.WriteLine("The cash is closed");
             }
-            else {
+            else
+            {
 
                 Console.WriteLine("The store is closed");
             }
