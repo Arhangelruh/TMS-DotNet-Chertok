@@ -8,6 +8,7 @@ namespace Homework7
         
         static void Main(string[] args)
         {
+         //   Cash.WorkDay();
             for (int i = 1; i <= 5; i++)
             {
                 Thread thread = new Thread(Cash.WorkCash);

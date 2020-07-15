@@ -5,25 +5,28 @@ namespace Homework7
 {
     class Cash {
         private static Random _random = new Random();
-        private static int SpeedWork = _random.Next(500, 1500);
+        private static int _speedWork = _random.Next(500, 1500);
 
         public static void WorkCash(object cash)
         {
-            DateTime timework = DateTime.Now;
+            var timework = DateTime.Now.TimeOfDay;
             Random random = new Random();
-            int timeopen = 10;
-            int timeclose = 56;
+            string timeopen = "10:30";
+            string timeclose = "11:37";
 
-            if (timework.Minute > timeopen && timework.Minute < timeclose)
+            TimeSpan tsOpen = TimeSpan.Parse(timeopen);
+            TimeSpan tsClose = TimeSpan.Parse(timeclose);
+
+            if (timework > tsOpen && timework < tsClose)
             {
-                for (int i = 1; timework.Minute < timeclose; i++)
+                for (int i = 1; timework < tsClose; i++)
                 {
-                    timework = DateTime.Now;
+                    timework = DateTime.Now.TimeOfDay;
                     var purchase = random.Next(1, 50);
                     for (int j = 1; j <= purchase; j++)
                     {
                         Console.WriteLine($"Cash №{(int)cash} Clients {i} Purchase {j}");
-                        Thread.Sleep(SpeedWork);
+                        Thread.Sleep(_speedWork);
                     }
                 };
                 Console.WriteLine("The cash is closed");
